@@ -29,6 +29,8 @@ type Universal = Combinable & Decision;
 //////////////////////////// Type Guard //////////////////////////////////////
 
 //////////// TypeOf Type Guard ///////////////////////////////
+function add(a: number, b: number): number;       /////// Method Overloading
+function add(a: string, b: string): string;       /////// Method Overloading
 function add(a: Combinable, b: Combinable){
     if(typeof a === 'string' || typeof b === 'string'){
         return a.toString() + b.toString();
@@ -46,10 +48,10 @@ function printEmployeeInformation(emp: UnknownEmployee){
         console.log('Privileages' + emp.privelages)
     }
 
-    if('startDate' in emp){
-        console.log('StartDate' + emp.privelages)
-    }
-    
+    // if('startDate' in emp){
+    //     console.log('StartDate' + emp.privelages)
+    // }
+    //
 }
 
 
@@ -131,6 +133,37 @@ const errorBug: ErrorContainer = {
     email: 'Not a Valid email',
     username: 'Must Start with a Capital Character'
 }
+
+
+//////////////////////////////////// Function Overloading //////////////////////////////////////////////////////////////////////////
+const result = add('Max', 'Shubham')    // Type Casting
+console.log(result.split(' '));
+
+
+///////////////////////////////// Optional Overloading //////////////////////////////////////////////////////////////////////
+const fetchedUserData = {
+    id: 'u1',
+    name: 'Shubham',
+    job: {title: 'CEO', description: 'My Own Company'}
+};
+
+console.log(fetchedUserData?.job?.title);  //////////// Optional Chaining
+
+////////////////////////////// Nullish Coalescing ////////////////////////////////////////////////////////
+const UserInput = null ;
+const storedData = UserInput ?? 'DEFAULT';
+
+console.log(storedData);
+
+
+
+
+
+
+
+
+
+
 
 
 
