@@ -67,16 +67,75 @@
 // console.log(combine(56.2, 45))
 
 //////////////////// Literal Type /////////////////////////////////
-function  combine(input1: number | string , input2: number | string , resultConversion: 'as-number' | 'as-text'){
-    let result;
-    if(typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number'){
-        result = +input1 + +input2;
-    }else{
-        result = input1.toString() + input2.toString();
-    }
+// function  combine(input1: number | string , input2: number | string , resultConversion: 'as-number' | 'as-text'){
+//     let result;
+//     if(typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number'){
+//         result = +input1 + +input2;
+//     }else{
+//         result = input1.toString() + input2.toString();
+//     }
+//
+//     return result;
+// }
+//
+// console.log(combine(45,23, 'as-text'));
+// console.log(combine('Rupal', 'Parul', 'as-text'))
 
-    return result;
+//////////////////////// Alias /////////////////////////////////////
+// type DataType = number | string;
+// type ResultConverter =  'as-number' | 'as-text';
+//
+//
+// function  combine(input1: DataType , input2: DataType , resultConversion: ResultConverter ){
+//     let result;
+//     if(typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number'){
+//         result = +input1 + +input2;
+//     }else{
+//         result = input1.toString() + input2.toString();
+//     }
+//
+//     return result;
+// }
+//
+// console.log(combine(45,23, 'as-text'));
+// console.log(combine('Rupal', 'Parul', 'as-text'))
+/////////////////////// TypeScript Return Type ///////////////////////////////////
+// function add(n1: number, n2: number){
+//     return n1 + n2;
+// }
+//
+// function printResult(num: number): void{
+//     console.log(`Result is ${num}`)
+// }
+//
+// function AddandHandle(n1: number, n2: number, cb: (num: number) => void){
+//     const result = n1 + n2;
+//     cb(result);
+// }
+//
+// printResult(add(3,15))
+//
+// let combinedValues : (a: number , b: number) => number;
+//
+// combinedValues = add;
+//
+// console.log(combinedValues(8,8))
+//
+// AddandHandle(2,3, (result) =>{
+//     console.log(result);
+// })
+///////////////////////////////// Unknown Type ///////////////////////////////////////////
+let userInput : unknown;
+let userName : string;
+
+userInput = 5;
+userInput = 'Max';
+if(typeof userInput === 'string'){
+    userName = userInput
 }
 
-console.log(combine(45,23, 'as-text'));
-console.log(combine('Rupal', 'Parul', 'as-text'))
+function generateError(message: string, code:number): never{
+    throw {message: message, errorCode: code}
+}
+
+generateError('An Error Occurred', 500);
