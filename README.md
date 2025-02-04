@@ -1,4 +1,4 @@
-![TypeScript Logo](https://upload.wikimedia.org/wikipedia/commons/4/4c/TypeScript_Logo_Blue.png)
+![TypeScript Logo](https://www.flaticon.com/free-icon/typescript_5968381)
 
 What is TypeScript?
 
