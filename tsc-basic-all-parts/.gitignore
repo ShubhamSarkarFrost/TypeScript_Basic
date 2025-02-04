@@ -1,0 +1,49 @@
+# Node.js dependencies
+node_modules/
+yarn.lock
+pnpm-lock.yaml
+
+# Output directories
+dist/
+build/
+out/
+
+# TypeScript build files
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Logs & Debugging
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+.log
+
+# Environment variables
+.env
+.env.test
+.env.production
+.env.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor & IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+jest/
+jest-cache/
+jest.config.js
+
+# Temporary files
+temp/
+tmp/
